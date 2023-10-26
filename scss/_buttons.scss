@@ -1,14 +1,6 @@
 .btn {
-  background-color: $moderate-cyan;
-  border: none;
-  border-radius: 30px;
-  color: $white;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  min-height: 60px;
-  padding: 10px 25px;
-  transition: 0.25s;
+  @include button;
+
   &--back {
     padding: 10px 40px;
   }
