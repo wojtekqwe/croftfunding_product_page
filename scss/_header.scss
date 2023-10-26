@@ -1,0 +1,8 @@
+.header {
+  & .bg-image {
+    background-image: url("../images/image-hero-mobile.jpg");
+    background-size: cover;
+
+    height: 400px;
+  }
+}

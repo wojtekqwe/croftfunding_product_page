@@ -1,0 +1,31 @@
+.bg-image {
+  background-image: url("../images/image-hero-mobile.jpg");
+  background-size: cover;
+
+  height: 400px;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  padding: 30px 5%;
+
+  &__logo,
+  &__hamburger {
+    height: 30px;
+    width: auto;
+    & img {
+      height: 100%;
+    }
+  }
+  &__hamburger {
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  &__items {
+    display: none;
+  }
+}
