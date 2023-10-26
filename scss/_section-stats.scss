@@ -1,3 +1,39 @@
 .stats {
   @include section-position;
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+
+    & .item {
+      @include title-text(36px);
+      padding: 0 15px;
+      margin: 15px 0;
+
+      & p:last-child {
+        @include description-text;
+        text-transform: lowercase;
+        margin: 10px 0;
+      }
+    }
+
+    & .line {
+      @include line($background, none, 3px, 30%);
+      margin: 0 auto;
+    }
+  }
+
+  &__line {
+    @include line($background, 10px, 15px, 100%);
+
+    // Style progress bar
+    position: relative;
+    & .progress-bar {
+      @include line($moderate-cyan, 10px, 15px, 72%);
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
 }
