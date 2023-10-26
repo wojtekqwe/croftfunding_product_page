@@ -1,4 +1,10 @@
 @import "variables";
 @import "reset";
 @import "nav";
+@import "section";
 @import "section-primary";
+@import "buttons";
+
+body {
+  background-color: $background;
+}

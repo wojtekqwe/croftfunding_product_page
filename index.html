@@ -45,7 +45,7 @@
         </div>
 
         <!-- Main section with primary info  -->
-        <section class="primary">
+        <section class="primary section">
           <h1 class="primary__title">Mastercraft bamboo monitor riser</h1>
           <h2 class="primary__subtitle">
             A beautiful & handcrafted monitor stand to reduce neck and eye
@@ -55,37 +55,39 @@
             <img src="./images/logo-mastercraft.svg" alt="Logo Mastercraft" />
           </div>
           <div class="primary__btns">
-            <button class="btn-back btn">Back this project</button>
+            <!-- btn-back class is unecessary -->
+            <button class="btn btn--back">Back this project</button>
             <div class="bookmark">
               <img src="./images/icon-bookmark.svg" alt="Icon bookmark" />
               <p>Bookmark</p>
             </div>
           </div>
-          <!-- Tutaj możliwe że trzeba dac klasę primary__stats aby wypozycjonować w stosunku do sekcji -->
-          <div class="stats">
-            <div class="stats__items">
-              <div class="item">
-                <p>$<span id="collect-money">89,914</span></p>
-                <p class="info">of $100,000 backed</p>
-              </div>
-              <div class="item">
-                <p><span id="total-backers">5,007</span></p>
-                <p class="info">total backers</p>
-              </div>
-              <div class="item">
-                <p><span id="days-left">56</span></p>
-                <p class="info">days-left</p>
-              </div>
-            </div>
-            <div class="stats__line">
-              <div class="stats__finish-line"></div>
-            </div>
-          </div>
         </section>
       </header>
 
+      <!-- Seciton with stats -->
+      <section class="stats section">
+        <div class="stats__items">
+          <div class="item">
+            <p>$<span id="collect-money">89,914</span></p>
+            <p class="info">of $100,000 backed</p>
+          </div>
+          <div class="item">
+            <p><span id="total-backers">5,007</span></p>
+            <p class="info">total backers</p>
+          </div>
+          <div class="item">
+            <p><span id="days-left">56</span></p>
+            <p class="info">days-left</p>
+          </div>
+        </div>
+        <div class="stats__line">
+          <div class="stats__finish-line"></div>
+        </div>
+      </section>
+
       <!-- Option select section  -->
-      <section class="about">
+      <section class="about section">
         <h2 class="about__title">About this project</h2>
         <p class="about__info">
           The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
