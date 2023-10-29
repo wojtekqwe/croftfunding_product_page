@@ -53,12 +53,57 @@
     }
   }
   &__btn {
-    margin-top: 25px;
+    margin-top: 20px;
     width: 70%;
   }
 
   // Temporary hidden
   &__pays {
+    align-items: center;
+    // display: flex;
     display: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & .line {
+      @include line($background, 0, 2px, 100%);
+      margin: 30px 0;
+    }
+
+    & p {
+      @include description-text;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    & button {
+      width: 50%;
+      margin: 0;
+    }
+
+    & span {
+      width: 33%;
+      // Change the position for char '$'
+      position: relative;
+      &::before {
+        content: "$";
+        @include description-text;
+        font-size: 16px;
+
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+      }
+    }
+
+    & input {
+      @include button;
+      background-color: transparent;
+      border: 2px solid $background;
+      color: black;
+      text-align: center;
+      width: 100%;
+    }
   }
 }

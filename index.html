@@ -119,8 +119,14 @@
               <button class="options__btn btn">Select reward</button>
             </div>
             <div class="options__pays">
+              <div class="line"></div>
               <p>Enter your pledge</p>
-              <input type="text" id="ammount" placeholder="$ 25" value="25" />
+
+              <!-- Throw input to span, so that you can position absolutely char '$' -->
+              <span>
+                <input type="text" id="ammount" placeholder="25" value="" />
+              </span>
+
               <button class="options__btn btn">Continue</button>
             </div>
           </div>
@@ -139,9 +145,14 @@
               <button class="options__btn btn">Select reward</button>
             </div>
             <div class="options__pays">
+              <div class="line"></div>
               <p>Enter your pledge</p>
-              <!-- Tutaj trzeba bedzie użyc ::after lub ::before w CSS zeby dodac znak '$' -->
-              <input type="text" id="ammount" placeholder="$ 75" value="75" />
+
+              <!-- Throw input to span, so that you can position absolutely char '$' -->
+              <span>
+                <input type="text" id="ammount" placeholder="75" value="" />
+              </span>
+
               <button class="options__btn btn">Continue</button>
             </div>
           </div>
