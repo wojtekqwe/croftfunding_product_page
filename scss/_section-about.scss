@@ -17,10 +17,21 @@
     box-shadow: none;
     border: 1px solid lighten($dark-gray, 35%);
     min-width: auto;
+    transition: 0.25s;
 
     // Disable last option
     &--finish {
       filter: grayscale(100%);
+
+      // Disable all reaction to this element
+      pointer-events: none;
+    }
+
+    &:hover .options__title {
+      color: $moderate-cyan;
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
   &__header {
@@ -30,6 +41,7 @@
   &__title,
   &__pay {
     @include title-text(16px);
+    transition: 0.25s;
   }
 
   &__pay {
@@ -60,8 +72,8 @@
   // Temporary hidden
   &__pays {
     align-items: center;
-    // display: flex;
-    display: none;
+    display: flex;
+    // display: none;
     justify-content: space-between;
     flex-wrap: wrap;
 

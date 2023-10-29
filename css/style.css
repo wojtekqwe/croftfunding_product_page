@@ -225,10 +225,19 @@
           box-shadow: none;
   border: 1px solid #d4d4d4;
   min-width: auto;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 .options__option--finish {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
+  pointer-events: none;
+}
+.options__option:hover .options__title {
+  color: hsl(176, 50%, 47%);
+}
+.options__option:hover {
+  cursor: pointer;
 }
 .options__header {
   display: -webkit-box;
@@ -245,6 +254,8 @@
   font-size: 16px;
   font-weight: 700;
   text-transform: capitalize;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 .options__pay {
   color: hsl(176, 50%, 47%);
@@ -289,7 +300,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
