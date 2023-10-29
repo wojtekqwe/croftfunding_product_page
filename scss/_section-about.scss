@@ -1,0 +1,64 @@
+.about {
+  @include section-position;
+  &__title {
+    @include title-text(24px);
+    text-transform: none;
+    margin-bottom: 30px;
+  }
+  &__info {
+    @include description-text;
+    margin-bottom: 30px;
+  }
+}
+
+.options {
+  &__option {
+    @include section-position;
+    box-shadow: none;
+    border: 1px solid lighten($dark-gray, 35%);
+    min-width: auto;
+
+    // Disable last option
+    &--finish {
+      filter: grayscale(100%);
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title,
+  &__pay {
+    @include title-text(16px);
+  }
+
+  &__pay {
+    color: $moderate-cyan;
+    margin-top: 10px;
+    text-transform: none;
+  }
+  &__text {
+    @include description-text;
+    margin: 30px 0;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    & p {
+      @include description-text;
+      & .left {
+        @include title-text(32px);
+        margin-right: 5px;
+      }
+    }
+  }
+  &__btn {
+    margin-top: 25px;
+    width: 70%;
+  }
+
+  // Temporary hidden
+  &__pays {
+    display: none;
+  }
+}
