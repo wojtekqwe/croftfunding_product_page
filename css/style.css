@@ -171,6 +171,200 @@
   top: 0;
 }
 
+.about {
+  background-color: hsl(0, 100%, 100%);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 1px 0px hsl(0, 0%, 48%);
+          box-shadow: 0px 0px 1px 0px hsl(0, 0%, 48%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto 40px;
+  min-width: 350px;
+  padding: 30px;
+  width: 90%;
+}
+.about__title {
+  color: hsl(0, 0%, 0%);
+  letter-spacing: 1px;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-transform: none;
+  margin-bottom: 30px;
+}
+.about__info {
+  color: hsl(0, 0%, 48%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 30px;
+}
+
+.options__option {
+  background-color: hsl(0, 100%, 100%);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 1px 0px hsl(0, 0%, 48%);
+          box-shadow: 0px 0px 1px 0px hsl(0, 0%, 48%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto 40px;
+  min-width: 350px;
+  padding: 30px;
+  width: 90%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #d4d4d4;
+  min-width: auto;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.options__option--finish {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  pointer-events: none;
+}
+.options__option:hover .options__title {
+  color: hsl(176, 50%, 47%);
+}
+.options__option:hover {
+  cursor: pointer;
+}
+.options__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.options__title, .options__pay {
+  color: hsl(0, 0%, 0%);
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.options__pay {
+  color: hsl(176, 50%, 47%);
+  margin-top: 10px;
+  text-transform: none;
+}
+.options__text {
+  color: hsl(0, 0%, 48%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 30px 0;
+}
+.options__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.options__info p {
+  color: hsl(0, 0%, 48%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.options__info p .left {
+  color: hsl(0, 0%, 0%);
+  letter-spacing: 1px;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+.options__btn {
+  margin-top: 20px;
+  width: 70%;
+}
+.options__pays {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.options__pays .line {
+  background-color: hsl(0, 0%, 94%);
+  border-radius: 0;
+  height: 2px;
+  width: 100%;
+  margin: 30px 0;
+}
+.options__pays p {
+  color: hsl(0, 0%, 48%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+.options__pays button {
+  width: 50%;
+  margin: 0;
+}
+.options__pays span {
+  width: 33%;
+  position: relative;
+}
+.options__pays span::before {
+  content: "$";
+  color: hsl(0, 0%, 48%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.options__pays input {
+  background-color: hsl(176, 50%, 47%);
+  border: none;
+  border-radius: 30px;
+  color: hsl(0, 100%, 100%);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 60px;
+  padding: 10px 25px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background-color: transparent;
+  border: 2px solid hsl(0, 0%, 94%);
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+
 .btn {
   background-color: hsl(176, 50%, 47%);
   border: none;

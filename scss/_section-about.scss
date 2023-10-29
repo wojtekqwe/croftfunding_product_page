@@ -1,0 +1,121 @@
+.about {
+  @include section-position;
+  &__title {
+    @include title-text(24px);
+    text-transform: none;
+    margin-bottom: 30px;
+  }
+  &__info {
+    @include description-text;
+    margin-bottom: 30px;
+  }
+}
+
+.options {
+  &__option {
+    @include section-position;
+    box-shadow: none;
+    border: 1px solid lighten($dark-gray, 35%);
+    min-width: auto;
+    transition: 0.25s;
+
+    // Disable last option
+    &--finish {
+      filter: grayscale(100%);
+
+      // Disable all reaction to this element
+      pointer-events: none;
+    }
+
+    &:hover .options__title {
+      color: $moderate-cyan;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title,
+  &__pay {
+    @include title-text(16px);
+    transition: 0.25s;
+  }
+
+  &__pay {
+    color: $moderate-cyan;
+    margin-top: 10px;
+    text-transform: none;
+  }
+  &__text {
+    @include description-text;
+    margin: 30px 0;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    & p {
+      @include description-text;
+      & .left {
+        @include title-text(32px);
+        margin-right: 5px;
+      }
+    }
+  }
+  &__btn {
+    margin-top: 20px;
+    width: 70%;
+  }
+
+  // Temporary hidden
+  &__pays {
+    align-items: center;
+    display: flex;
+    // display: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & .line {
+      @include line($background, 0, 2px, 100%);
+      margin: 30px 0;
+    }
+
+    & p {
+      @include description-text;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    & button {
+      width: 50%;
+      margin: 0;
+    }
+
+    & span {
+      width: 33%;
+      // Change the position for char '$'
+      position: relative;
+      &::before {
+        content: "$";
+        @include description-text;
+        font-size: 16px;
+
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+      }
+    }
+
+    & input {
+      @include button;
+      background-color: transparent;
+      border: 2px solid $background;
+      color: black;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
