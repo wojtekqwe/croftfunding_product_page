@@ -1,0 +1,15 @@
+.modal {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &__bg {
+    @include position-modal(rgba(0, 0, 0, 0.7), 0, 0, 100%, 100%);
+  }
+
+  &__fg {
+    @include position-modal($background, 5%, 3%, auto, 90%);
+  }
+}

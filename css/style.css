@@ -365,6 +365,29 @@
   width: 100%;
 }
 
+.modal {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.modal__bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.modal__fg {
+  background-color: hsl(0, 0%, 94%);
+  left: 5%;
+  position: absolute;
+  top: 2%;
+  width: 90%;
+}
+
 .btn {
   background-color: hsl(176, 50%, 47%);
   border: none;
@@ -387,4 +410,5 @@
 
 body {
   background-color: hsl(0, 0%, 94%);
+  position: relative;
 }/*# sourceMappingURL=style.css.map */
