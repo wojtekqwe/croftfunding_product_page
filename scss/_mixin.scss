@@ -45,9 +45,9 @@
   width: $width;
 }
 
-@mixin position-modal($color, $position, $left, $top, $height, $width) {
+@mixin position-modal($color, $left, $top, $height, $width) {
   background-color: $color;
-  position: $position;
+  position: absolute;
   left: $left;
   top: $top;
   height: $height;

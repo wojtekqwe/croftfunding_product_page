@@ -254,6 +254,7 @@
   font-size: 16px;
   font-weight: 700;
   text-transform: capitalize;
+  text-transform: none;
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -300,12 +301,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -330,6 +329,7 @@
   margin: 0;
 }
 .options__pays span {
+  margin-right: auto;
   width: 33%;
   position: relative;
 }
@@ -374,18 +374,72 @@
 }
 .modal__bg {
   background-color: rgba(0, 0, 0, 0.7);
-  height: 100%;
-  left: 0;
   position: absolute;
+  left: 0;
   top: 0;
+  height: 100%;
   width: 100%;
 }
-.modal__fg {
-  background-color: hsl(0, 0%, 94%);
-  left: 5%;
-  position: absolute;
-  top: 2%;
+.modal__options {
+  background-color: hsl(0, 100%, 100%);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 1px 0px hsl(0, 0%, 48%);
+          box-shadow: 0px 0px 1px 0px hsl(0, 0%, 48%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto 40px;
+  min-width: 350px;
+  padding: 30px;
   width: 90%;
+  background-color: hsl(0, 0%, 94%);
+  position: absolute;
+  left: 5%;
+  top: 3%;
+  height: auto;
+  width: 90%;
+}
+.modal__title {
+  color: hsl(0, 0%, 0%);
+  letter-spacing: 1px;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-transform: none;
+}
+.modal__subtitle {
+  color: hsl(0, 0%, 48%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 20px 0;
+}
+
+.options__option--modal {
+  width: 100%;
+}
+.options .header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.options .header div {
+  border: 1px solid hsl(0, 0%, 48%);
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 25px;
+  width: 25px;
 }
 
 .btn {

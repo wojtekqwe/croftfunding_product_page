@@ -41,6 +41,7 @@
   &__title,
   &__pay {
     @include title-text(16px);
+    text-transform: none;
     transition: 0.25s;
   }
 
@@ -72,9 +73,9 @@
   // Temporary hidden
   &__pays {
     align-items: center;
-    display: flex;
-    // display: none;
-    justify-content: space-between;
+    // display: flex;
+    display: none;
+    justify-content: flex-end;
     flex-wrap: wrap;
 
     & .line {
@@ -94,6 +95,7 @@
     }
 
     & span {
+      margin-right: auto;
       width: 33%;
       // Change the position for char '$'
       position: relative;
