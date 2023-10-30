@@ -5,14 +5,26 @@
   position: absolute;
   top: 0;
   width: 100%;
+  // &--completed {
+  //   display: block;
+  // }
 
   &__bg {
     @include position-modal(rgba(0, 0, 0, 0.7), 0, 0, 100%, 100%);
   }
 
-  &__options {
+  &__options,
+  &__complete {
     @include section-position;
     @include position-modal($background, 5%, 3%, auto, 90%);
+  }
+  &__complete {
+    top: 6%;
+    text-align: center;
+    & .btn {
+      margin: 5px auto 0;
+      width: 35%;
+    }
   }
   &__title {
     @include title-text(24px);
@@ -21,6 +33,14 @@
   &__subtitle {
     @include description-text;
     margin: 20px 0;
+  }
+  &__check {
+    height: 80px;
+    margin: 10px auto 20px;
+    width: 80px;
+    & img {
+      height: 100%;
+    }
   }
 }
 
