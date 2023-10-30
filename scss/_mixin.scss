@@ -44,3 +44,12 @@
   height: $height;
   width: $width;
 }
+
+@mixin position-modal($color, $left, $top, $height, $width) {
+  background-color: $color;
+  position: absolute;
+  left: $left;
+  top: $top;
+  height: $height;
+  width: $width;
+}

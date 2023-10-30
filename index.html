@@ -177,91 +177,122 @@
       <!-- Modal after click button 'Back this project' -->
       <section class="modal">
         <div class="modal__bg"></div>
-        <h2 class="modal__title">Back this project</h2>
-        <h2 class="modal__subtitle">
-          Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
-          the world?
-        </h2>
-
         <!-- Similar element as in section: 'about' -->
         <!-- Możliwe że modal__options nie będzie potrzebne -->
-        <div class="modal__options options modal">
-          <div class="options__option">
-            <div class="option__header">
-              <h3 class="option__title">Pledge with no reward</h3>
+        <div class="modal__options options">
+          <div class="options__title">
+            <h2 class="modal__title">Back this project</h2>
+            <div>
+              <img src="./images/icon-close-modal.svg" alt="Icon close menu" />
             </div>
-            <p class="option__text">
+          </div>
+          <h2 class="modal__subtitle">
+            Want to support us in bringing Mastercraft Bamboo Monitor Riser out
+            in the world?
+          </h2>
+          <div class="options__option options__option--modal">
+            <div class="options__header header">
+              <div class="options__check"></div>
+              <div class="options__more">
+                <h3>Pledge with no reward</h3>
+              </div>
+            </div>
+            <p class="options__text">
               Choose to support us without a reward if you simply believe in our
               project. As a backer, you will be signed up to receive product
               updates via email.
             </p>
-            <div class="option__pay">
-              <p>Enter your pledge</p>
-              <input type="text" id="ammount" placeholder="$ 25" value="25" />
-              <button class="option__btn btn">Continue</button>
+            <div class="options__pays">
+              <div class="line"></div>
+              <button class="options__btn btn">Continue</button>
             </div>
           </div>
-          <div class="options__option">
-            <div class="option__header">
-              <h3 class="option__title">Bamboo Stand</h3>
-              <p class="option__pay">Pledge $25 or more</p>
-              <div class="option__info">
-                <p><span class="left">101</span>left</p>
-              </div>
-            </div>
-            <p class="option__text">
-              You get an ergonomic stand made of natural bamboo. You've helped
-              us launch our promotional campaign, and you’ll be added to a
-              special Backer member list.
-            </p>
 
-            <div class="option__pay">
-              <p>Enter your pledge</p>
-              <input type="text" id="ammount" placeholder="$ 25" value="25" />
-              <button class="option__btn btn">Continue</button>
-            </div>
-          </div>
-          <div class="options__option">
-            <div class="option__header">
-              <h3 class="option__title">Black Edition Stand</h3>
-              <p class="option__pay">Pledge $75 or more</p>
-              <div class="option__info">
-                <p><span class="left">64</span>left</p>
+          <div class="options__option options__option--modal">
+            <div class="options__header header">
+              <div class="options__check"></div>
+              <div class="options__more">
+                <h3>Bamboo Stand</h3>
+                <p>Pledge $25 or more</p>
               </div>
             </div>
-            <p class="option__text">
+            <p class="options__text">
+              You get an ergonomic stand made of natural bamboo. You've helped
+              us launch our promotial campaign, and you’ll be added to a special
+              Backer member list.
+            </p>
+            <div class="options__info">
+              <p><span class="left">101</span>left</p>
+            </div>
+            <div class="options__pays">
+              <div class="line"></div>
+              <p>Enter your pledge</p>
+              <span>
+                <input type="text" id="ammount" placeholder="25" value="" />
+              </span>
+              <button class="options__btn btn">Continue</button>
+            </div>
+          </div>
+
+          <div class="options__option options__option--modal">
+            <div class="options__header header">
+              <div class="options__check"></div>
+              <div class="options__more">
+                <h3>Black Edition Stand</h3>
+                <p>Pledge $75 or more</p>
+              </div>
+            </div>
+            <p class="options__text">
               You get a Black Special Edition computer stand and a personal
-              thank you. You’ll be added to our Backer member list. Shipping is
+              thank you. You’ll be added to our Backer member list.Shipping is
               included.
             </p>
-
-            <div class="option__pay">
+            <div class="options__info">
+              <p><span class="left">64</span>left</p>
+            </div>
+            <div class="options__pays">
+              <div class="line"></div>
               <p>Enter your pledge</p>
-              <!-- Tutaj trzeba bedzie użyc ::after lub ::before w CSS zeby dodac znak '$' -->
-              <input type="text" id="ammount" placeholder="$ 75" value="75" />
-              <button class="option__btn btn">Continue</button>
+              <span>
+                <input type="text" id="ammount" placeholder="75" value="" />
+              </span>
+              <button class="options__btn btn">Continue</button>
             </div>
           </div>
-          <div class="options__option options__option--finish">
-            <div class="option__header">
-              <h3 class="option__title">MAhogany Special Edition</h3>
-              <p class="option__pay">Pledge $200 or more</p>
+
+          <div
+            class="options__option options__option--modal options__option--finish"
+          >
+            <div class="options__header header">
+              <div class="options__check"></div>
+              <div class="options__more">
+                <h3>Mahogany Special Edition</h3>
+                <p>Pledge $200 or more</p>
+              </div>
             </div>
-            <p class="option__text">
+
+            <p class="options__text">
               You get two Special Edition Mahogany stands, a Backer T-Shirt, and
               a personal thank you. You’ll be added to our Backer member list.
               Shipping is included.
             </p>
-            <div class="option__info">
+            <div class="options__info">
               <p><span class="left">0</span>left</p>
-              <button class="option__btn btn">Out of stock</button>
+            </div>
+            <div class="options__pays">
+              <div class="line"></div>
+              <p>Enter your pledge</p>
+              <span>
+                <input type="text" id="ammount" placeholder="200" value="" />
+              </span>
+              <button class="options__btn btn">Out of stock</button>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Modal after choose product and click 'continue' -->
-      <div class="modal">
+      <!-- <div class="modal">
         <div class="modal__check">
           <img src="./images/icon-check.svg" alt="Icon check" />
         </div>
@@ -272,7 +303,7 @@
           completed.
         </p>
         <button class="btn">Got it!</button>
-      </div>
+      </div> -->
     </main>
   </body>
 </html>

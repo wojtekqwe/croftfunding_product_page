@@ -6,8 +6,12 @@
 @import "section-primary";
 @import "section-stats";
 @import "section-about";
+@import "modal";
 @import "buttons";
 
 body {
   background-color: $background;
+
+  // Change positions for modals
+  position: relative;
 }

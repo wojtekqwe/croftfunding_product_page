@@ -22,12 +22,13 @@
     // Disable last option
     &--finish {
       filter: grayscale(100%);
+      opacity: 0.5;
 
       // Disable all reaction to this element
       pointer-events: none;
     }
 
-    &:hover .options__title {
+    &:hover h3 {
       color: $moderate-cyan;
     }
     &:hover {
@@ -37,11 +38,15 @@
   &__header {
     display: flex;
     flex-direction: column;
+
+    & h3 {
+      transition: 0.25s;
+    }
   }
   &__title,
   &__pay {
     @include title-text(16px);
-    transition: 0.25s;
+    text-transform: none;
   }
 
   &__pay {
@@ -72,9 +77,9 @@
   // Temporary hidden
   &__pays {
     align-items: center;
-    display: flex;
-    // display: none;
-    justify-content: space-between;
+    // display: flex;
+    display: none;
+    justify-content: flex-end;
     flex-wrap: wrap;
 
     & .line {
@@ -94,6 +99,7 @@
     }
 
     & span {
+      margin-right: auto;
       width: 33%;
       // Change the position for char '$'
       position: relative;
