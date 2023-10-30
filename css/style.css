@@ -384,7 +384,7 @@
   height: 100%;
   width: 100%;
 }
-.modal__options {
+.modal__options, .modal__complete {
   background-color: hsl(0, 100%, 100%);
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 1px 0px hsl(0, 0%, 48%);
@@ -407,6 +407,14 @@
   height: auto;
   width: 90%;
 }
+.modal__complete {
+  top: 6%;
+  text-align: center;
+}
+.modal__complete .btn {
+  margin: 5px auto 0;
+  width: 35%;
+}
 .modal__title {
   color: hsl(0, 0%, 0%);
   letter-spacing: 1px;
@@ -421,6 +429,14 @@
   font-weight: 400;
   line-height: 150%;
   margin: 20px 0;
+}
+.modal__check {
+  height: 80px;
+  margin: 10px auto 20px;
+  width: 80px;
+}
+.modal__check img {
+  height: 100%;
 }
 
 .options__title {
