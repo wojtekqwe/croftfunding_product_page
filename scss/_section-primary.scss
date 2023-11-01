@@ -42,3 +42,41 @@
     }
   }
 }
+
+@media screen and (min-width: $small) {
+  .primary {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: $medium) {
+  .primary {
+    width: 60%;
+    &__btns {
+      & .bookmark {
+        align-items: center;
+        background-color: $background;
+        border-radius: 40px;
+        cursor: pointer;
+        display: flex;
+        opacity: 0.85;
+        transition: 0.25s;
+        p {
+          @include title-text(16px);
+          color: $dark-gray;
+          display: block;
+          padding: 10px 25px 10px 10px;
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large) {
+  .primary {
+    width: 40%;
+  }
+}
