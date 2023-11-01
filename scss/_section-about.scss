@@ -125,3 +125,41 @@
     }
   }
 }
+
+@media screen and (min-width: $small) {
+  .about {
+    width: 80%;
+  }
+  .options {
+    &__info {
+      & .btn {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $medium) {
+  .about {
+    width: 60%;
+  }
+
+  .options {
+    &__info {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__pays {
+      & .btn {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large) {
+  .about {
+    width: 40%;
+  }
+}

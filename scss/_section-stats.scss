@@ -37,3 +37,21 @@
     }
   }
 }
+
+@media screen and (min-width: $small) {
+  .stats {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: $medium) {
+  .stats {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: $large) {
+  .stats {
+    width: 40%;
+  }
+}
