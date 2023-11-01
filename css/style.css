@@ -135,6 +135,16 @@
 .primary__btns .bookmark p {
   display: none;
 }
+.primary__btns .bookmark.active {
+  opacity: 1;
+}
+.primary__btns .bookmark.active p {
+  color: hsl(176, 72%, 28%);
+}
+.primary__btns .bookmark.active img {
+  -webkit-filter: invert(19%) sepia(9%) saturate(5402%) hue-rotate(134deg) brightness(88%) contrast(84%);
+          filter: invert(19%) sepia(9%) saturate(5402%) hue-rotate(134deg) brightness(88%) contrast(84%);
+}
 
 @media screen and (min-width: 768px) {
   .primary {

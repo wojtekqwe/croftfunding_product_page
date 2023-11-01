@@ -40,6 +40,17 @@
         display: none;
       }
     }
+    & .bookmark.active {
+      opacity: 1;
+      & p {
+        color: $dark-cyan;
+      }
+
+      & img {
+        filter: invert(19%) sepia(9%) saturate(5402%) hue-rotate(134deg)
+          brightness(88%) contrast(84%);
+      }
+    }
   }
 }
 
