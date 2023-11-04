@@ -2,6 +2,8 @@ const optionsBtn = document.querySelectorAll(".options__info .btn");
 
 const summaryPopup = document.querySelector(".modal--completed");
 
+let positionY;
+
 let payContainer = document.querySelector("#collect-money");
 let backerContainer = document.querySelector("#total-backers");
 
@@ -19,12 +21,12 @@ function removeSelectedOption(container) {
 function showSummaryPopup() {
   const optionsContainer = document.querySelector(".options");
   removeSelectedOption(optionsContainer);
-  const actuallyPositionScroll = window.scrollY;
 
-  // Add class to popup
-  summaryPopup.querySelector(".modal__complete").style.top =
-    actuallyPositionScroll + 100 + "px";
+  // Add class to popup - class changePopupPosition change position popup
+  positionY = window.scrollY;
   summaryPopup.classList.add("show");
+  summaryPopup.querySelector(".modal__complete").style.top =
+    positionY + 100 + "px";
 }
 
 // Update data in stats and product section
@@ -57,6 +59,17 @@ function checkOption(element) {
   const btnContinue = productContainer.querySelector(".options__pays .btn");
   btnContinue.addEventListener("click", updateData);
 }
+
+// Change position POPUP after scroll
+function changePopupPosition() {
+  if (summaryPopup.classList.contains("show")) {
+    positionY = window.scrollY;
+    summaryPopup.querySelector(".modal__complete").style.top =
+      positionY + 100 + "px";
+  }
+}
+
+window.addEventListener("scroll", changePopupPosition);
 
 // Option in main view
 optionsBtn.forEach((option) => {
