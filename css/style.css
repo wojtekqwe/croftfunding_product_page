@@ -332,6 +332,26 @@
 .options__option:hover {
   cursor: pointer;
 }
+.options__option.active {
+  -webkit-box-shadow: 0 0 0 3px hsl(176, 50%, 47%);
+          box-shadow: 0 0 0 3px hsl(176, 50%, 47%);
+  cursor: default;
+}
+.options__option.active .options__pays {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.options__option.active .options__check {
+  background-color: hsl(176, 50%, 47%);
+  border: 5px solid hsl(0, 100%, 100%);
+  outline: 1px solid hsl(0, 0%, 48%);
+}
+.options__option.active .options__info .btn {
+  cursor: default;
+  opacity: 0.7;
+  pointer-events: none;
+}
 .options__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -589,25 +609,6 @@
 }
 .options__option--modal {
   width: 100%;
-}
-.options__option.active {
-  border: 2px solid hsl(176, 50%, 47%);
-  cursor: default;
-}
-.options__option.active .options__pays {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.options__option.active .options__check {
-  background-color: hsl(176, 50%, 47%);
-  border: 5px solid hsl(0, 100%, 100%);
-  outline: 1px solid hsl(0, 0%, 48%);
-}
-.options__option.active .options__info .btn {
-  cursor: default;
-  opacity: 0.7;
-  pointer-events: none;
 }
 .options__more p {
   color: hsl(176, 50%, 47%);
