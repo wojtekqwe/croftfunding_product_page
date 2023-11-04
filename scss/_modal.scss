@@ -7,7 +7,10 @@
   width: 100%;
   &--completed {
     display: none;
-    // display: flex;
+  }
+
+  &--completed.show {
+    display: flex;
   }
 
   &__bg {

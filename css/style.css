@@ -532,6 +532,11 @@
 .modal--completed {
   display: none;
 }
+.modal--completed.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .modal__bg {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;

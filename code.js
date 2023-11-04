@@ -1,5 +1,7 @@
 const optionsBtn = document.querySelectorAll(".options__info .btn");
 
+const summaryPopup = document.querySelector(".modal--completed");
+
 let payContainer = document.querySelector("#collect-money");
 let backerContainer = document.querySelector("#total-backers");
 
@@ -13,23 +15,37 @@ function removeSelectedOption(container) {
   });
 }
 
+// Show last modal
+function showSummaryPopup() {
+  const optionsContainer = document.querySelector(".options");
+  removeSelectedOption(optionsContainer);
+  const actuallyPositionScroll = window.scrollY;
+
+  // Add class to popup
+  summaryPopup.querySelector(".modal__complete").style.top =
+    actuallyPositionScroll + 100 + "px";
+  summaryPopup.classList.add("show");
+}
+
 // Update data in stats and product section
 function updateData() {
   const inputContainer = this.previousElementSibling.querySelector("input");
   const inputValue = Number(inputContainer.value);
   const minValue = Number(inputContainer.min);
+  const leftValue = this.closest(".active").querySelector(".left");
+
+  // Error handling
   if (inputValue >= minValue) {
     inputContainer.classList.remove("error");
+
+    // Change values in site
+    payContainer.textContent = Number(payContainer.textContent) + inputValue;
+    backerContainer.textContent = Number(backerContainer.textContent) + 1;
+    leftValue.textContent = Number(leftValue.textContent) - 1;
+    showSummaryPopup();
   } else {
     inputContainer.classList.add("error");
   }
-
-  payContainer.textContent = Number(payContainer.textContent) + inputValue;
-}
-
-// Show last modal
-function showSummary() {
-  updateData();
 }
 
 function checkOption(element) {
