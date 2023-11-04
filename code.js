@@ -1,5 +1,6 @@
 const bookmark = document.querySelector(".bookmark");
 const optionsBtn = document.querySelectorAll(".options__info .btn");
+const optionsBtnModal = document.querySelectorAll(".options__option--modal");
 
 // Function select bookmark button
 function changeBtnColor() {
@@ -14,18 +15,28 @@ function changeBtnColor() {
 // Function hide all options
 function hideAllOptions() {
   optionsBtn.forEach((option) => {
-    option.parentElement.nextElementSibling.style.display = "none";
+    option.parentElement.parentElement.classList.remove("active");
   });
-}
-
-//Function to show available option
-function showOptionsElement() {
-  hideAllOptions();
-  this.parentElement.nextElementSibling.style.display = "flex";
 }
 
 bookmark.addEventListener("click", changeBtnColor);
 
+// Option in main view
 optionsBtn.forEach((option) => {
-  option.addEventListener("click", showOptionsElement);
+  option.addEventListener("click", function () {
+    hideAllOptions();
+    const container = this.parentElement.parentElement;
+
+    container.classList.toggle("active");
+  });
+});
+
+// Option in modal
+optionsBtnModal.forEach((option) => {
+  option.addEventListener("click", function () {
+    optionsBtnModal.forEach((option) => {
+      option.classList.remove("active");
+    });
+    this.classList.toggle("active");
+  });
 });

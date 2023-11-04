@@ -5,10 +5,10 @@
   position: absolute;
   top: 0;
   width: 100%;
-  // &--completed {
-  // display: none;
-  // display: flex;
-  // }
+  &--completed {
+    display: none;
+    // display: flex;
+  }
 
   &__bg {
     @include position-modal(rgba(0, 0, 0, 0.7), 0, 0, 100%, 100%);
@@ -65,6 +65,29 @@
       width: 100%;
     }
   }
+
+  // Change color and show pays after click button
+  &__option.active {
+    border: 2px solid $moderate-cyan;
+    cursor: default;
+
+    & .options__pays {
+      display: flex;
+    }
+
+    & .options__check {
+      background-color: $moderate-cyan;
+      border: 5px solid $white;
+      outline: 1px solid $dark-gray;
+    }
+
+    & .options__info .btn {
+      cursor: default;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  }
+
   &__more {
     & p {
       color: $moderate-cyan;
