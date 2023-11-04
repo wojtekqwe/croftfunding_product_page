@@ -477,7 +477,15 @@
   border: 2px solid hsl(0, 0%, 94%);
   color: black;
   text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   width: 100%;
+}
+.options__pays input:focus {
+  outline: none;
+}
+.options__pays input.error {
+  border: 2px solid red;
 }
 
 @media screen and (min-width: 768px) {

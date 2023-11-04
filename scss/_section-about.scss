@@ -140,7 +140,16 @@
       border: 2px solid $background;
       color: black;
       text-align: center;
+      transition: 0.5s;
       width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    // Add error class to show ERROR
+    & input.error {
+      border: 2px solid red;
     }
   }
 }

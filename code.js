@@ -4,7 +4,7 @@ let payContainer = document.querySelector("#collect-money");
 let backerContainer = document.querySelector("#total-backers");
 
 // Function hide all options
-function hideAllOptions(container) {
+function removeSelectedOption(container) {
   const parentElement = container.parentElement;
   const activeElement = parentElement.querySelectorAll(".active");
 
@@ -14,7 +14,18 @@ function hideAllOptions(container) {
 }
 
 // Update data in stats and product section
-function updateData() {}
+function updateData() {
+  const inputContainer = this.previousElementSibling.querySelector("input");
+  const inputValue = Number(inputContainer.value);
+  const minValue = Number(inputContainer.min);
+  if (inputValue >= minValue) {
+    inputContainer.classList.remove("error");
+  } else {
+    inputContainer.classList.add("error");
+  }
+
+  payContainer.textContent = Number(payContainer.textContent) + inputValue;
+}
 
 // Show last modal
 function showSummary() {
@@ -22,9 +33,13 @@ function showSummary() {
 }
 
 function checkOption(element) {
-  const findElement = element.target.closest(".options__option");
-  hideAllOptions(findElement);
-  findElement.classList.add("active");
+  const productContainer = element.target.closest(".options__option");
+  removeSelectedOption(productContainer);
+  productContainer.classList.add("active");
+
+  // Find button 'Continue'
+  const btnContinue = productContainer.querySelector(".options__pays .btn");
+  btnContinue.addEventListener("click", updateData);
 }
 
 // Option in main view
