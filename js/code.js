@@ -1,11 +1,28 @@
-const optionsBtn = document.querySelectorAll(".options__info .btn");
+import { Stats } from "./Stats.js";
 
-const summaryPopup = document.querySelector(".modal--completed");
+// Input data
+let priceTotal = 89914;
+let backers = 5007;
+let dayLeft = 56;
 
-let positionY;
-
+// Stats container
 let payContainer = document.querySelector("#collect-money");
 let backerContainer = document.querySelector("#total-backers");
+let timeLeftContainer = document.querySelector("#days-left");
+console.log(timeLeftContainer);
+
+let positionY;
+const optionsBtn = document.querySelectorAll(".options__info .btn");
+const summaryPopup = document.querySelector(".modal--completed");
+
+// Function that generates data after the page is loaded
+window.addEventListener("DOMContentLoaded", function () {
+  const stats = new Stats(priceTotal, backers, dayLeft);
+  console.log(stats);
+  payContainer.textContent = stats.price;
+  backerContainer.textContent = stats.backers;
+  timeLeftContainer.textContent = stats.day;
+});
 
 // Function hide all options
 function removeSelectedOption(container) {
@@ -41,8 +58,12 @@ function updateData() {
     inputContainer.classList.remove("error");
 
     // Change values in site
-    payContainer.textContent = Number(payContainer.textContent) + inputValue;
-    backerContainer.textContent = Number(backerContainer.textContent) + 1;
+    priceTotal += inputValue;
+    backers++;
+    payContainer.textContent = priceTotal;
+    backerContainer.textContent = backers;
+    // payContainer.textContent = Number(payContainer.textContent) + inputValue;
+    // backerContainer.textContent = Number(backerContainer.textContent) + 1;
     leftValue.textContent = Number(leftValue.textContent) - 1;
     showSummaryPopup();
   } else {
