@@ -48,6 +48,10 @@
   }
 }
 
+.modal.show {
+  display: flex;
+}
+
 .options {
   &__title {
     align-items: center;

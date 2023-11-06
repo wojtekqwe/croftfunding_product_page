@@ -10,17 +10,13 @@ let payContainer = document.querySelector("#collect-money");
 let backerContainer = document.querySelector("#total-backers");
 let timeLeftContainer = document.querySelector("#days-left");
 
+const bookmark = document.querySelector(".bookmark");
+
 let positionY;
 const optionsBtn = document.querySelectorAll(".options__info .btn");
 const summaryPopup = document.querySelector(".modal--completed");
-
-// Function that generates data after the page is loaded
-window.addEventListener("DOMContentLoaded", function () {
-  const stats = new Stats(priceTotal, backers, dayLeft);
-  payContainer.textContent = stats.price;
-  backerContainer.textContent = stats.backers;
-  timeLeftContainer.textContent = stats.day;
-});
+const btnBackProject = document.querySelector(".btn--back");
+const offerPopup = document.querySelector("#offer-popup");
 
 // Change position POPUP after scroll
 function changePopupPosition() {
@@ -34,11 +30,12 @@ function changePopupPosition() {
 // Close popup
 function closePopup() {
   window.scrollTo({
-    top: 530,
+    top: 0,
     left: 0,
     behavior: "smooth",
   });
   this.closest(".modal").classList.remove("show");
+  offerPopup.classList.remove("show");
 }
 
 // Show last modal
@@ -98,7 +95,34 @@ function checkOption(element) {
 
   // Find button 'Continue'
   const btnContinue = productContainer.querySelector(".options__pays .btn");
-  btnContinue.addEventListener("click", updateData);
+  if (productContainer.querySelector("#ammount")) {
+    btnContinue.addEventListener("click", updateData);
+  } else {
+    btnContinue.addEventListener("click", showSummaryPopup);
+  }
+}
+
+// Function select bookmark button
+function changeBtnColor() {
+  this.classList.toggle("active");
+  if (this.classList.contains("active")) {
+    this.querySelector("p").textContent = "Bookmarked";
+  } else {
+    this.querySelector("p").textContent = "Bookmark";
+  }
+}
+
+function showOfferPopup() {
+  offerPopup.classList.add("show");
+  window.scrollTo({
+    top: 10,
+    left: 0,
+    behavior: "smooth",
+  });
+  const offers = offerPopup.querySelectorAll(".options__option");
+  offers.forEach((offer) => {
+    offer.addEventListener("click", checkOption);
+  });
 }
 
 // Option in main view
@@ -106,8 +130,20 @@ optionsBtn.forEach((option) => {
   option.addEventListener("click", checkOption);
 });
 
+btnBackProject.addEventListener("click", showOfferPopup);
+
+// Reaction for click icon bookmarks
+bookmark.addEventListener("click", changeBtnColor);
+
 window.addEventListener("scroll", changePopupPosition);
 
+// Function that generates data after the page is loaded
+window.addEventListener("DOMContentLoaded", function () {
+  const stats = new Stats(priceTotal, backers, dayLeft);
+  payContainer.textContent = stats.price;
+  backerContainer.textContent = stats.backers;
+  timeLeftContainer.textContent = stats.day;
+});
 //
 //
 //
@@ -171,15 +207,3 @@ window.addEventListener("scroll", changePopupPosition);
 //
 //
 //
-// const bookmark = document.querySelector(".bookmark");
-// Function select bookmark button
-// function changeBtnColor() {
-//   this.classList.toggle("active");
-//   if (this.classList.contains("active")) {
-//     this.querySelector("p").textContent = "Bookmarked";
-//   } else {
-//     this.querySelector("p").textContent = "Bookmark";
-//   }
-// }
-// Reaction for click icon bookmarks
-// bookmark.addEventListener("click", changeBtnColor);
