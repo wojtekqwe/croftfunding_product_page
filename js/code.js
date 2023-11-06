@@ -1,14 +1,24 @@
-import { Stats } from "./Stats.js";
+import { ProductAmmount, Stats } from "./Stats.js";
 
 // Input data
 let priceTotal = 89914;
 let backers = 5007;
 let dayLeft = 56;
 
+//Ammount in offer
+let bambooLeft = 101;
+let blackEditionLeft = 64;
+let mahoganyLeft = 0;
+
 // Stats container
 let payContainer = document.querySelector("#collect-money");
 let backerContainer = document.querySelector("#total-backers");
 let timeLeftContainer = document.querySelector("#days-left");
+
+// Product containers
+let bambooContainer = document.querySelectorAll(".bamboo-left");
+let blackEditionContainer = document.querySelectorAll(".black-edition-left");
+let mahoganyContainer = document.querySelectorAll(".mahogany-left");
 
 const bookmark = document.querySelector(".bookmark");
 
@@ -53,6 +63,21 @@ function showSummaryPopup() {
   btn.addEventListener("click", closePopup);
 }
 
+// Change ammount products
+function changeAmmountProduct(product) {
+  if (product.classList.contains("bamboo-left")) {
+    bambooLeft--;
+  } else if (product.classList.contains("black-edition-left")) {
+    blackEditionLeft--;
+  } else if (product.classList.contains("mahogany")) {
+    mahoganyLeft--;
+  }
+
+  generateProduct(bambooContainer, bambooLeft);
+  generateProduct(blackEditionContainer, blackEditionLeft);
+  generateProduct(mahoganyContainer, mahoganyLeft);
+}
+
 // Update data in stats and product section
 function updateData() {
   const inputContainer = this.previousElementSibling.querySelector("input");
@@ -70,7 +95,7 @@ function updateData() {
     payContainer.textContent = priceTotal;
     backerContainer.textContent = backers;
 
-    leftValue.textContent = Number(leftValue.textContent) - 1;
+    changeAmmountProduct(leftValue);
     showSummaryPopup();
   } else {
     inputContainer.classList.add("error");
@@ -113,16 +138,44 @@ function changeBtnColor() {
 }
 
 function showOfferPopup() {
+  const offers = offerPopup.querySelectorAll(".options__option");
+  const btnClose = offerPopup.querySelector(".options__title div");
+
   offerPopup.classList.add("show");
   window.scrollTo({
     top: 10,
     left: 0,
     behavior: "smooth",
   });
-  const offers = offerPopup.querySelectorAll(".options__option");
   offers.forEach((offer) => {
     offer.addEventListener("click", checkOption);
   });
+
+  btnClose.addEventListener("click", closePopup);
+}
+
+function generateProduct(products, ammount) {
+  products.forEach((product) => {
+    product.textContent = ammount;
+  });
+}
+
+// Generate data
+function generateData() {
+  const stats = new Stats(priceTotal, backers, dayLeft);
+  payContainer.textContent = stats.price;
+  backerContainer.textContent = stats.backers;
+  timeLeftContainer.textContent = stats.day;
+
+  const products = new ProductAmmount(
+    bambooLeft,
+    blackEditionLeft,
+    mahoganyLeft
+  );
+
+  generateProduct(bambooContainer, bambooLeft);
+  generateProduct(blackEditionContainer, blackEditionLeft);
+  generateProduct(mahoganyContainer, mahoganyLeft);
 }
 
 // Option in main view
@@ -130,20 +183,17 @@ optionsBtn.forEach((option) => {
   option.addEventListener("click", checkOption);
 });
 
+// Function after click 'Back this project'
 btnBackProject.addEventListener("click", showOfferPopup);
 
 // Reaction for click icon bookmarks
 bookmark.addEventListener("click", changeBtnColor);
 
+//Change position scroll
 window.addEventListener("scroll", changePopupPosition);
 
 // Function that generates data after the page is loaded
-window.addEventListener("DOMContentLoaded", function () {
-  const stats = new Stats(priceTotal, backers, dayLeft);
-  payContainer.textContent = stats.price;
-  backerContainer.textContent = stats.backers;
-  timeLeftContainer.textContent = stats.day;
-});
+window.addEventListener("DOMContentLoaded", generateData);
 //
 //
 //

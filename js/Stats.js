@@ -5,3 +5,11 @@ export class Stats {
     this.day = day;
   }
 }
+
+export class ProductAmmount {
+  constructor(bamboo, blackEdition, mahogany) {
+    this.bamboo = bamboo;
+    this.blackEdition = blackEdition;
+    this.mahogany = mahogany;
+  }
+}
