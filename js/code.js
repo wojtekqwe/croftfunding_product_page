@@ -6,8 +6,8 @@ let backers = 5007;
 let dayLeft = 56;
 
 //Ammount in offer
-let bambooLeft = 101;
-let blackEditionLeft = 64;
+let bambooLeft = 1;
+let blackEditionLeft = 2;
 let mahoganyLeft = 0;
 
 // Stats container
@@ -101,6 +101,14 @@ function updateData() {
     inputContainer.classList.add("error");
   }
 }
+//
+//
+// Zrobić funkcję kór aprzyciemni product gdy ilość == 0
+// Menu mobilne
+// Nie działa zwiększanie 'backersów' w przypadku wsparcia bez kasy
+//
+//
+//
 
 // Function hide all options
 function removeSelectedOption(container) {
@@ -157,6 +165,13 @@ function showOfferPopup() {
 function generateProduct(products, ammount) {
   products.forEach((product) => {
     product.textContent = ammount;
+    // Change the color unavailable products
+    if (ammount <= 0) {
+      product
+        .closest(".options__option")
+        .classList.add("options__option--finish");
+    }
+    product.closest(".options__option").classList.remove("active");
   });
 }
 
