@@ -7,8 +7,8 @@ let dayLeft = 56;
 
 //Ammount in offer
 let bambooLeft = 1;
-let blackEditionLeft = 2;
-let mahoganyLeft = 0;
+let blackEditionLeft = 64;
+let mahoganyLeft = 1;
 
 // Stats container
 let payContainer = document.querySelector("#collect-money");
@@ -69,7 +69,7 @@ function changeAmmountProduct(product) {
     bambooLeft--;
   } else if (product.classList.contains("black-edition-left")) {
     blackEditionLeft--;
-  } else if (product.classList.contains("mahogany")) {
+  } else if (product.classList.contains("mahogany-left")) {
     mahoganyLeft--;
   }
 
@@ -103,9 +103,8 @@ function updateData() {
 }
 //
 //
-// Zrobić funkcję kór aprzyciemni product gdy ilość == 0
+
 // Menu mobilne
-// Nie działa zwiększanie 'backersów' w przypadku wsparcia bez kasy
 //
 //
 //
@@ -124,6 +123,7 @@ function removeSelectedOption(container) {
 function checkOption(element) {
   const productContainer = element.target.closest(".options__option");
   removeSelectedOption(productContainer);
+
   productContainer.classList.add("active");
 
   // Find button 'Continue'
@@ -131,6 +131,8 @@ function checkOption(element) {
   if (productContainer.querySelector("#ammount")) {
     btnContinue.addEventListener("click", updateData);
   } else {
+    backers++;
+    backerContainer.textContent = backers;
     btnContinue.addEventListener("click", showSummaryPopup);
   }
 }
@@ -167,11 +169,23 @@ function generateProduct(products, ammount) {
     product.textContent = ammount;
     // Change the color unavailable products
     if (ammount <= 0) {
-      product
+      const btn = product
         .closest(".options__option")
-        .classList.add("options__option--finish");
+        .querySelector(".options__info button");
+      const container = product.closest(".options__option");
+      container.classList.add("options__option--finish");
+
+      // Delayed function to make the border disappear
+      setTimeout(() => {
+        container.classList.remove("active");
+      }, 100);
+
+      if (btn !== null) {
+        btn.textContent = "Out of stock";
+      }
     }
-    product.closest(".options__option").classList.remove("active");
+    // Caly czas jest aktywny product w moadlu jak już ilosć jest równa 0
+    // product.closest(".options__option").classList.remove("active");
   });
 }
 

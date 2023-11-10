@@ -168,7 +168,7 @@
               <button class="options__btn btn">Continue</button>
             </div>
           </div>
-          <div class="options__option options__option--finish">
+          <div class="options__option">
             <div class="options__header">
               <h3 class="options__title">Mahogany Special Edition</h3>
               <p class="options__pay">Pledge $200 or more</p>
@@ -180,9 +180,23 @@
             </p>
             <div class="options__info">
               <p><span class="left mahogany-left">0</span>left</p>
-              <button class="options__btn btn">Out of stock</button>
+              <button class="options__btn btn">Select reward</button>
             </div>
-            <div class="options__pay"></div>
+            <div class="options__pays">
+              <div class="line"></div>
+              <p>Enter your pledge</p>
+              <span>
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="200"
+                  min="200"
+                  value=""
+                />
+              </span>
+
+              <button class="options__btn btn">Continue</button>
+            </div>
           </div>
         </div>
       </section>
@@ -285,9 +299,7 @@
             </div>
           </div>
 
-          <div
-            class="options__option options__option--modal options__option--finish"
-          >
+          <div class="options__option options__option--modal">
             <div class="options__header header">
               <div class="options__check"></div>
               <div class="options__more">
@@ -308,9 +320,15 @@
               <div class="line"></div>
               <p>Enter your pledge</p>
               <span>
-                <input type="text" id="ammount" placeholder="200" value="" />
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="200"
+                  min="200"
+                  value=""
+                />
               </span>
-              <button class="options__btn btn">Out of stock</button>
+              <button class="options__btn btn">Continue</button>
             </div>
           </div>
         </div>
