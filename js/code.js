@@ -21,6 +21,7 @@ let blackEditionContainer = document.querySelectorAll(".black-edition-left");
 let mahoganyContainer = document.querySelectorAll(".mahogany-left");
 
 const bookmark = document.querySelector(".bookmark");
+const menuBtn = document.querySelector(".nav__hamburger");
 
 let positionY;
 const optionsBtn = document.querySelectorAll(".options__info .btn");
@@ -206,6 +207,20 @@ function generateData() {
   generateProduct(blackEditionContainer, blackEditionLeft);
   generateProduct(mahoganyContainer, mahoganyLeft);
 }
+
+function showMobileMenu() {
+  const mobileMenu = this.previousElementSibling;
+  mobileMenu.classList.add("active");
+
+  mobileMenu.querySelector(".nav__close").addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    menuBtn.style.display = "flex";
+  });
+  menuBtn.style.display = "none";
+}
+
+// Show mobile menu after click hamburger
+menuBtn.addEventListener("click", showMobileMenu);
 
 // Option in main view
 optionsBtn.forEach((option) => {

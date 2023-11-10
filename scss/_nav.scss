@@ -14,7 +14,8 @@
 
   &__logo,
   &__hamburger {
-    height: 30px;
+    height: 40px;
+    padding: 5px;
     width: auto;
     & img {
       height: 100%;
@@ -25,8 +26,42 @@
     padding: 5px;
   }
 
-  &__items {
+  &__mobile {
     display: none;
+    & .modal__bg {
+      display: none;
+    }
+  }
+  &__close {
+    @include position-modal(transparent, 85%, 40px, 40px, 40px);
+    z-index: 2;
+    & img {
+      height: 100%;
+    }
+  }
+
+  &__items {
+    @include position-modal($white, 5%, 120px, 300px, 90%);
+    @include section-position;
+    list-style-type: none;
+    justify-content: space-between;
+    z-index: 2;
+  }
+
+  &__mobile.active {
+    display: flex;
+
+    & .modal__bg {
+      display: flex;
+      z-index: 1;
+    }
+  }
+}
+
+.items {
+  &__item {
+    @include title-text(26px);
+    padding: 10px 15px;
   }
 }
 
