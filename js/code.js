@@ -6,7 +6,7 @@ let backers = 5007;
 let dayLeft = 56;
 
 //Ammount in offer
-let bambooLeft = 1;
+let bambooLeft = 101;
 let blackEditionLeft = 64;
 let mahoganyLeft = 1;
 
@@ -209,14 +209,22 @@ function generateData() {
 }
 
 function showMobileMenu() {
-  const mobileMenu = this.previousElementSibling;
-  mobileMenu.classList.add("active");
+  const menu = this.closest(".nav__main");
+  const btn = this.querySelector("img");
 
-  mobileMenu.querySelector(".nav__close").addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-    menuBtn.style.display = "flex";
-  });
-  menuBtn.style.display = "none";
+  menu.classList.toggle("active");
+  if (menu.classList.contains("active")) {
+    btn.src = "./images/icon-close-menu.svg";
+  } else {
+    btn.src = "./images/icon-hamburger.svg";
+  }
+
+  // Click other place than menu close the menu
+  this.parentElement
+    .querySelector(".modal__bg")
+    .addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
 }
 
 // Show mobile menu after click hamburger
@@ -238,66 +246,3 @@ window.addEventListener("scroll", changePopupPosition);
 
 // Function that generates data after the page is loaded
 window.addEventListener("DOMContentLoaded", generateData);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// const optionsBtnModal = document.querySelectorAll(".options__option--modal");
-// Option in modal
-// optionsBtnModal.forEach((option) => {
-//   option.addEventListener("click", function () {
-//     optionsBtnModal.forEach((option) => {
-//       option.classList.remove("active");
-//     });
-//     this.classList.toggle("active");
-//   });
-// });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//

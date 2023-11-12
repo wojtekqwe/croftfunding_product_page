@@ -10,15 +10,23 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
-  padding: 30px 5%;
+  padding: 30px 10%;
 
   &__logo,
   &__hamburger {
-    height: 40px;
-    padding: 5px;
+    height: 50px;
     width: auto;
     & img {
       height: 100%;
+      padding: 5px;
+    }
+  }
+  &__main {
+    align-items: center;
+    display: flex;
+    & .modal__bg {
+      display: none;
+      z-index: 1;
     }
   }
   &__hamburger {
@@ -26,42 +34,44 @@
     padding: 5px;
   }
 
-  &__mobile {
-    display: none;
-    & .modal__bg {
-      display: none;
-    }
-  }
-  &__close {
-    @include position-modal(transparent, 85%, 40px, 40px, 40px);
-    z-index: 2;
-    & img {
-      height: 100%;
-    }
-  }
-
   &__items {
-    @include position-modal($white, 5%, 120px, 300px, 90%);
-    @include section-position;
+    @include position-modal($white, 5%, -15%, 250px, 90%);
+    @include title-text(24px);
+    border-radius: 15px;
     list-style-type: none;
-    justify-content: space-between;
-    z-index: 2;
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1;
+    transition: 0.5s;
   }
 
-  &__mobile.active {
-    display: flex;
-
+  // Active menu after click hamburger
+  &__main.active {
     & .modal__bg {
-      display: flex;
+      display: block;
+    }
+    & .nav__hamburger {
       z-index: 1;
+    }
+    & .nav__items {
+      top: 100px;
+    }
+    & .nav__close {
+      transform: scale(1);
     }
   }
 }
 
 .items {
   &__item {
-    @include title-text(26px);
-    padding: 10px 15px;
+    padding: 5px 35px;
+  }
+
+  & .line {
+    @include line($background, 1px, 2px, 100%);
   }
 }
 
@@ -71,10 +81,18 @@
       display: none;
     }
     &__items {
+      background: transparent;
+      box-shadow: none;
       display: flex;
+      flex-direction: row;
       list-style-type: none;
+      justify-content: flex-end;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      position: static;
       & li {
-        @include title-text(16px);
+        @include title-text(18px);
         color: $background;
         cursor: pointer;
         font-weight: 400;
