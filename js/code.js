@@ -103,13 +103,6 @@ function updateData() {
     inputContainer.classList.add("error");
   }
 }
-//
-//
-
-// Menu mobilne
-//
-//
-//
 
 // Function hide all options
 function removeSelectedOption(container) {
@@ -186,8 +179,6 @@ function generateProduct(products, ammount) {
         btn.textContent = "Out of stock";
       }
     }
-    // Caly czas jest aktywny product w moadlu jak już ilosć jest równa 0
-    // product.closest(".options__option").classList.remove("active");
   });
 }
 
