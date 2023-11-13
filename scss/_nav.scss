@@ -10,14 +10,23 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
-  padding: 30px 5%;
+  padding: 30px 10%;
 
   &__logo,
   &__hamburger {
-    height: 30px;
+    height: 50px;
     width: auto;
     & img {
       height: 100%;
+      padding: 5px;
+    }
+  }
+  &__main {
+    align-items: center;
+    display: flex;
+    & .modal__bg {
+      display: none;
+      z-index: 1;
     }
   }
   &__hamburger {
@@ -26,7 +35,43 @@
   }
 
   &__items {
-    display: none;
+    @include position-modal($white, 5%, -15%, 250px, 90%);
+    @include title-text(24px);
+    border-radius: 15px;
+    list-style-type: none;
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+  // Active menu after click hamburger
+  &__main.active {
+    & .modal__bg {
+      display: block;
+    }
+    & .nav__hamburger {
+      z-index: 1;
+    }
+    & .nav__items {
+      top: 100px;
+    }
+    & .nav__close {
+      transform: scale(1);
+    }
+  }
+}
+
+.items {
+  &__item {
+    padding: 5px 35px;
+  }
+
+  & .line {
+    @include line($background, 1px, 2px, 100%);
   }
 }
 
@@ -36,19 +81,31 @@
       display: none;
     }
     &__items {
+      align-items: center;
+      background-color: transparent;
+      cursor: pointer;
       display: flex;
-      list-style-type: none;
-      & li {
-        @include title-text(16px);
-        color: $background;
-        cursor: pointer;
-        font-weight: 400;
-        margin: 0 10px;
-        padding: 10px;
-        transition: 0.25s;
-        &:hover {
-          color: $white;
-        }
+      flex-direction: row;
+      justify-content: flex-end;
+      height: auto;
+      position: static;
+      width: auto;
+
+      & .line {
+        display: none;
+      }
+    }
+  }
+
+  .items {
+    &__item {
+      color: darken($background, 5%);
+      font-size: 16px;
+      font-weight: 400;
+      min-width: 150px;
+      text-align: center;
+      &:hover {
+        color: $white;
       }
     }
   }

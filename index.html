@@ -13,6 +13,7 @@
 
     <title>Frontend Mentor | Crowdfunding product page</title>
 
+    <!-- Google Fonts  -->
     <link
       href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -30,16 +31,20 @@
               <img src="./images/logo.svg" alt="Logo crowdfund" />
             </div>
 
-            <!-- Desktop menu  -->
-            <ul class="nav__items items">
-              <li class="items__item">About</li>
-              <li class="items__item">Discover</li>
-              <li class="items__item">Get Started</li>
-            </ul>
+            <div class="nav__main">
+              <div class="modal__bg"></div>
+              <!-- Mobile menu  -->
+              <div class="nav__hamburger">
+                <img src="./images/icon-hamburger.svg" alt="Hamburger logo" />
+              </div>
 
-            <!-- Mobile menu  -->
-            <div class="nav__hamburger">
-              <img src="./images/icon-hamburger.svg" alt="Hamburger logo" />
+              <ul class="nav__items items">
+                <li class="items__item">About</li>
+                <div class="line"></div>
+                <li class="items__item">Discover</li>
+                <div class="line"></div>
+                <li class="items__item">Get Started</li>
+              </ul>
             </div>
           </nav>
         </div>
@@ -69,17 +74,17 @@
       <section class="stats">
         <div class="stats__items">
           <div class="item">
-            <p>$<span id="collect-money">89,914</span></p>
+            <p>$<span id="collect-money"></span></p>
             <p class="info">of $100,000 backed</p>
           </div>
           <div class="line"></div>
           <div class="item">
-            <p><span id="total-backers">5,007</span></p>
+            <p><span id="total-backers"></span></p>
             <p class="info">total backers</p>
           </div>
           <div class="line"></div>
           <div class="item">
-            <p><span id="days-left">56</span></p>
+            <p><span id="days-left"></span></p>
             <p class="info">days-left</p>
           </div>
         </div>
@@ -115,7 +120,7 @@
               special Backer member list.
             </p>
             <div class="options__info">
-              <p><span class="left">101</span>left</p>
+              <p><span class="left bamboo-left">101</span>left</p>
               <button class="options__btn btn">Select reward</button>
             </div>
             <div class="options__pays">
@@ -124,7 +129,13 @@
 
               <!-- Throw input to span, so that you can position absolutely char '$' -->
               <span>
-                <input type="text" id="ammount" placeholder="25" value="" />
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="25"
+                  min="25"
+                  value=""
+                />
               </span>
 
               <button class="options__btn btn">Continue</button>
@@ -141,7 +152,7 @@
               included.
             </p>
             <div class="options__info">
-              <p><span class="left">64</span>left</p>
+              <p><span class="left black-edition-left">64</span>left</p>
               <button class="options__btn btn">Select reward</button>
             </div>
             <div class="options__pays">
@@ -150,13 +161,19 @@
 
               <!-- Throw input to span, so that you can position absolutely char '$' -->
               <span>
-                <input type="text" id="ammount" placeholder="75" value="" />
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="75"
+                  min="75"
+                  value=""
+                />
               </span>
 
               <button class="options__btn btn">Continue</button>
             </div>
           </div>
-          <div class="options__option options__option--finish">
+          <div class="options__option">
             <div class="options__header">
               <h3 class="options__title">Mahogany Special Edition</h3>
               <p class="options__pay">Pledge $200 or more</p>
@@ -167,18 +184,32 @@
               Shipping is included.
             </p>
             <div class="options__info">
-              <p><span class="left">0</span>left</p>
-              <button class="options__btn btn">Out of stock</button>
+              <p><span class="left mahogany-left">0</span>left</p>
+              <button class="options__btn btn">Select reward</button>
+            </div>
+            <div class="options__pays">
+              <div class="line"></div>
+              <p>Enter your pledge</p>
+              <span>
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="200"
+                  min="200"
+                  value=""
+                />
+              </span>
+
+              <button class="options__btn btn">Continue</button>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Modal after click button 'Back this project' -->
-      <section class="modal">
+      <section class="modal" id="offer-popup">
         <div class="modal__bg"></div>
         <!-- Similar element as in section: 'about' -->
-        <!-- Możliwe że modal__options nie będzie potrzebne -->
         <div class="modal__options options">
           <div class="options__title">
             <h2 class="modal__title">Back this project</h2>
@@ -222,13 +253,19 @@
               Backer member list.
             </p>
             <div class="options__info">
-              <p><span class="left">101</span>left</p>
+              <p><span class="left bamboo-left">101</span>left</p>
             </div>
             <div class="options__pays">
               <div class="line"></div>
               <p>Enter your pledge</p>
               <span>
-                <input type="text" id="ammount" placeholder="25" value="" />
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="25"
+                  min="25"
+                  value=""
+                />
               </span>
               <button class="options__btn btn">Continue</button>
             </div>
@@ -248,21 +285,25 @@
               included.
             </p>
             <div class="options__info">
-              <p><span class="left">64</span>left</p>
+              <p><span class="left black-edition-left">64</span>left</p>
             </div>
             <div class="options__pays">
               <div class="line"></div>
               <p>Enter your pledge</p>
               <span>
-                <input type="text" id="ammount" placeholder="75" value="" />
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="75"
+                  min="75"
+                  value=""
+                />
               </span>
               <button class="options__btn btn">Continue</button>
             </div>
           </div>
 
-          <div
-            class="options__option options__option--modal options__option--finish"
-          >
+          <div class="options__option options__option--modal">
             <div class="options__header header">
               <div class="options__check"></div>
               <div class="options__more">
@@ -277,15 +318,21 @@
               Shipping is included.
             </p>
             <div class="options__info">
-              <p><span class="left">0</span>left</p>
+              <p><span class="left mahogany-left">0</span>left</p>
             </div>
             <div class="options__pays">
               <div class="line"></div>
               <p>Enter your pledge</p>
               <span>
-                <input type="text" id="ammount" placeholder="200" value="" />
+                <input
+                  type="number"
+                  id="ammount"
+                  placeholder="200"
+                  min="200"
+                  value=""
+                />
               </span>
-              <button class="options__btn btn">Out of stock</button>
+              <button class="options__btn btn">Continue</button>
             </div>
           </div>
         </div>
@@ -307,6 +354,8 @@
           <button class="btn">Got it!</button>
         </div>
       </div>
+
+      <script type="module" src="js/code.js"></script>
     </main>
   </body>
 </html>
