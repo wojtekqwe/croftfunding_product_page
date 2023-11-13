@@ -22,6 +22,7 @@ let mahoganyContainer = document.querySelectorAll(".mahogany-left");
 
 const bookmark = document.querySelector(".bookmark");
 const menuBtn = document.querySelector(".nav__hamburger");
+const menu = document.querySelector(".nav__main");
 
 let positionY;
 const optionsBtn = document.querySelectorAll(".options__info .btn");
@@ -224,6 +225,7 @@ function showMobileMenu() {
     .querySelector(".modal__bg")
     .addEventListener("click", () => {
       menu.classList.remove("active");
+      btn.src = "./images/icon-hamburger.svg";
     });
 }
 
@@ -246,3 +248,11 @@ window.addEventListener("scroll", changePopupPosition);
 
 // Function that generates data after the page is loaded
 window.addEventListener("DOMContentLoaded", generateData);
+
+// Delete mobile menu after resize window
+window.addEventListener("resize", () => {
+  if (window.screen.width > 992) {
+    menu.classList.remove("active");
+    menuBtn.querySelector("img").src = "./images/icon-hamburger.svg";
+  }
+});
